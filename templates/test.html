@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS3+HTML5特效3 - 纵向无缝滚动</title>
+</head>
+<style>
+@-webkit-keyframes scrollText1 {
+    0%{
+        -webkit-transform: translateY(0px);
+    }
+    20%{
+        -webkit-transform: translateY(-30px);
+    }
+    40%{
+        -webkit-transform: translateY(-60px);
+    }
+    60%{
+        -webkit-transform: translateY(-90px);
+    }
+    80%{
+        -webkit-transform: translateY(-120px);
+    }
+    100%{
+        -webkit-transform: translateY(-150px);
+    }
+}
+
+@keyframes scrollText1 {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-30px);
+    }
+    40%{
+        transform: translateY(-60px);
+    }
+    60%{
+        transform: translateY(-90px);
+    }
+    80%{
+        transform: translateY(-120px);
+    }
+    100%{
+        transform: translateY(-150px);
+    }
+.box3{
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 30px;
+  overflow: hidden;
+  border:1px solid #ccc;
+}
+
+.border3{
+  top: 0px;
+  -webkit-animation:scrollText1 8s infinite  cubic-bezier(1,0,0.5,0) ;
+  animation:scrollText1 8s infinite  cubic-bezier(1,0,0.5,0) ;
+}
+
+.border3 div{
+  height: 30px;
+}
+
+.border3:hover{
+  animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+}
+</style>
+<body>
+<div class="box3">
+  <div class="border3">
+    <div>This is a test 1.</div>
+    <div>This is a test 2.</div>
+    <div>This is a test 3.</div>
+    <div>This is a test 4.</div>
+    <div>This is a test 5.</div>
+    <div>This is a test 1.</div>
+  </div>
+</div>
+</body>
+</html>
